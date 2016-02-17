@@ -1,3 +1,6 @@
+//@author Kaveri Krishnaraj
+//Musician Servlet class
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -24,28 +27,27 @@ public class MusicianServlet extends HttpServlet {
 										 _bundle.getString("dbHost"), Integer.parseInt(_bundle.getString("dbPort")));  
 	}
 	public void doPost(HttpServletRequest inRequest, HttpServletResponse outResponse) throws ServletException, IOException {  
-	
-	  doGet(inRequest, outResponse);  
+	  	doGet(inRequest, outResponse);  
 	}
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.setContentType("text/html");
-        ArrayList info = new ArrayList();
-	PrintWriter out = response.getWriter();
-	String member = request.getParameter("musicianName");
-        
-	out.println("<center>");
-	out.println("<h2>Musician Information</h2>");
-	out.println("<table>");
-	
-	info = _reg.getMusicianInfo(member);
-	for ( int i=0;i<info.size();i++) {
-	Musician m = (Musician)info.get(i);
-	out.println("<h4>"+m.getMusicianName()+"<h4>");
-	out.println("<br></br>");
-	out.println("<tr><td>Date of Birth :" +m.getDOB()+  "</td></tr>");
-	out.println("<tr><td>Place of Birth :" +m.getPlace()+  "</td></tr>");
-        out.println("<tr><td>Years Active :" +m.getYears()+  "</td></tr>");
-	out.println("<tr><td>Associated Acts :" +m.getAssoc()+  "</td></tr>");
+	        response.setContentType("text/html");
+	        ArrayList info = new ArrayList();
+		PrintWriter out = response.getWriter();
+		String member = request.getParameter("musicianName");
+	        
+		out.println("<center>");
+		out.println("<h2>Musician Information</h2>");
+		out.println("<table>");
+		
+		info = _reg.getMusicianInfo(member);
+		for ( int i=0;i<info.size();i++) {
+		Musician m = (Musician)info.get(i);
+		out.println("<h4>"+m.getMusicianName()+"<h4>");
+		out.println("<br></br>");
+		out.println("<tr><td>Date of Birth :" +m.getDOB()+  "</td></tr>");
+		out.println("<tr><td>Place of Birth :" +m.getPlace()+  "</td></tr>");
+	        out.println("<tr><td>Years Active :" +m.getYears()+  "</td></tr>");
+		out.println("<tr><td>Associated Acts :" +m.getAssoc()+  "</td></tr>");
 
         }
 	}
