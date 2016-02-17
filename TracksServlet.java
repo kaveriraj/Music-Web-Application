@@ -1,4 +1,5 @@
-
+//@author Kaveri Krishnaraj
+//Tracks Servlet class
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -38,27 +39,26 @@ public class TracksServlet extends HttpServlet {
 	     
 	      for (int i=0; i<TrList.size(); i++) {
 	    	 Tracks tracks = (Tracks) TrList.get(i);
-	    	out.println(tracks.toHTML());  
-		}
+		 out.println(tracks.toHTML());  
+	       }
 	}
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
   
-	  response.setContentType("text/html");
-	 String albumName = request.getParameter("albumName");
-	 System.out.println("selected album: " + albumName);                
-      PrintWriter out = response.getWriter();
-      out.println("<html><head></head><body>");
-      
-      if (!_message.equalsIgnoreCase("servus")) {
-    	  out.println("<h1>Oracle connection failed " + _message + "</h1>");
-      } else {
-	     printAlbumInfo(out, albumName);
-	     
-      }
-	  
-      out.println("</table>");
-      out.println("</html>");
+		response.setContentType("text/html");
+		String albumName = request.getParameter("albumName");
+		System.out.println("selected album: " + albumName);                
+		PrintWriter out = response.getWriter();
+		out.println("<html><head></head><body>");
+		
+		if (!_message.equalsIgnoreCase("servus")) {
+		out.println("<h1>Oracle connection failed " + _message + "</h1>");
+		} else {
+		printAlbumInfo(out, albumName);
+		}
+		
+		out.println("</table>");
+		out.println("</html>");
 	}
   
 	public void doPost(HttpServletRequest inRequest, HttpServletResponse outResponse) throws ServletException, IOException {  
