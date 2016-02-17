@@ -1,3 +1,5 @@
+//@author Kaveri Krishnaraj
+//Tracks model class
 public class Tracks {
   
   private String _trackTitle;
