@@ -1,3 +1,6 @@
+
+//@author Kaveri Krishnaraj
+//Musician model class
 public  class Musician {
 
 private String _musician_name;
