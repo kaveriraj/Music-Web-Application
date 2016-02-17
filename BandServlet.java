@@ -1,3 +1,7 @@
+ 
+//@author Kaveri Krishnaraj
+//Band Servlet class
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -37,8 +41,8 @@ public class BandServlet extends HttpServlet {
 	     
 	     PrintWriter out = response.getWriter();
 	     out.println("<html><form action=\"BandInfoServlet\" method=\"post\">");
-		out.println("<center>");     
-	out.println("<h1>Select Band Menu</h1>"); 
+	     out.println("<center>");     
+	     out.println("<h1>Select Band Menu</h1>"); 
              out.println("<p>");
 	     out.println("<select name=\"bandname\">");
 	     ArrayList BandList = _reg.getBandList(Genre);
@@ -47,8 +51,7 @@ public class BandServlet extends HttpServlet {
 		    Band band = (Band) BandList.get(i);
                     out.println("<OPTION VALUE=\"" + band.getName() +  "\">" + band.getName() + "</OPTION>");
               } 
-
-	     
+              
 	     out.println("</select></p>");
 	     out.println("<p><input type=\"submit\" value=\"band information\" name=\"B1\"></p></form></html>");
 	     out.close();
