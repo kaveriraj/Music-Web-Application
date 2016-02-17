@@ -1,6 +1,6 @@
 
 //@author Kaveri Krishnaraj
-//Album model class
+//Band Info Servlet Class
 
 import java.io.IOException;
 import java.io.PrintWriter;
