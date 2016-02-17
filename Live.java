@@ -1,3 +1,6 @@
+
+//@author Kaveri Krishnaraj
+//Live model class
 public  class Live {
 
 private String _place_name;
