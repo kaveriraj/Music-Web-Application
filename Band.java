@@ -1,3 +1,6 @@
+//@author Kaveri Krishnaraj
+//Band model class
+
 public class Band {
 
 private String _name;
